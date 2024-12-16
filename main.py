@@ -38,3 +38,9 @@ app.get_graph().draw_mermaid_png(output_file_path="graph.png")
 
 if __name__ == '__main__':
     print("Hello ReAct with LangGraph.")
+    res = app.invoke(
+        input={
+            "input": "What is the weather in San Francisco? Write it and then Triple it."
+        }
+    )
+    print(res["agent_outcome"].return_values["output"])
